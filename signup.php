@@ -14,5 +14,9 @@
 
         <p><strong>Repeat password</strong></p>
         <input type="password_2" name="password_2">
+
+        <p>
+            <button type="submit">Submit</button>
+        </p>
     </p>
 </form>
