@@ -21,6 +21,8 @@ if(isset($data['do_signin'])) {
 }
 
 ?>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+
 <form action="/signin.php" method="POST">
 
     <p>

@@ -43,6 +43,8 @@ if(isset($data['do_signup'])) {
 
 ?>
 
+<link href="style.css" rel="stylesheet" type="text/css"/>
+
 <form action="/signup.php" method="POST">
 
     <p>
