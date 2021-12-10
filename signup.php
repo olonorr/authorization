@@ -19,12 +19,10 @@ if(isset($data['do_signup'])) {
         $errors[] = 'repeated password entered incorrectly';
     }
     if(R::count('users', 'login = ?', array($data['login'])) > 0) {
-        // такой логин уже есть
         $errors[] = 'пользователь с таким логином уже есть';
 
     }
     if(R::count('users', 'email = ?', array([$data['email']])) > 0) {
-        // такой email уже есть
         $errors[] = 'пользователь с такой почтой уже есть';
         
     }
