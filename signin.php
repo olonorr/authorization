@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link href="assets/styles/main.css" rel="stylesheet" type="text/css"/>
+</head>
+
 <?php 
 require 'includes/db.php';
 $data = $_POST;
@@ -19,23 +27,22 @@ if(isset($data['do_signin'])) {
         echo '<div style="color: red;">' . array_shift($errors) . '</div><hr>';
     }
 }
-
 ?>
-<link href="style.css" rel="stylesheet" type="text/css"/>
+
+<body>
 
 <form action="/signin.php" method="POST">
 
-    <p>
-        <p><strong>Username or email</strong></p>
-        <input type="text" name="login" value = "<?php echo @$data['login']; ?>">
-    </p>
+        <label>Логин или email</label>
+        <input type="text" placeholder="Введите логин или email" name="login" value = "<?php echo @$data['login']; ?>">
 
-    <p>
-        <p><strong>Password</strong></p>
-        <input type="password" name="password" value = "<?php echo @$data['password']; ?>">
-    </p>
+        <label>Пароль</label>
+        <input type="password" placeholder="Введите пароль" name="password" value = "<?php echo @$data['password']; ?>">
 
-    <p>
         <button type="submit" name="do_signin">Войти</button>
-    </p>
+        
+        <p>У вас нет аккаунта? - <a href="/signup.php">Зарегистрируйтесь</a></p>
 </form>
+
+</body>
+</html>

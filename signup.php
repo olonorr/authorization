@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link href="assets/styles/main.css" rel="stylesheet" type="text/css"/>
+</head>
+
 <?php 
 require 'includes/db.php';
 $data = $_POST;
@@ -41,31 +49,25 @@ if(isset($data['do_signup'])) {
 
 ?>
 
-<link href="style.css" rel="stylesheet" type="text/css"/>
+<body>
 
-<form action="/signup.php" method="POST">
+    <form action="/signup.php" method="POST">
+        <label>Логин</label>
+        <input type="text" placeholder="Введите Логин" name="login" value = "<?php echo @$data['login']; ?>">
 
-    <p>
-        <p><strong>Username</strong></p>
-        <input type="text" name="login" value = "<?php echo @$data['login']; ?>">
-    </p>
+        <label>Email</label>
+        <input type="email" placeholder="Введите Email" name="email" value = "<?php echo @$data['email']; ?>">
 
-    <p>
-        <p><strong>Email</strong></p>
-        <input type="email" name="email" value = "<?php echo @$data['email']; ?>">
-    </p>
+        <label>Пароль</label>
+        <input type="password" placeholder="Введите пароль" name="password" value = "<?php echo @$data['password']; ?>">
 
-    <p>
-        <p><strong>Password</strong></p>
-        <input type="password" name="password" value = "<?php echo @$data['password']; ?>">
-    </p>
+        <label>Подтверждение пароля</label>
+        <input type="password_2" placeholder="Введите пароль ещё раз" name="password" name="password_2" value = "<?php echo @$data['password_2']; ?>">
 
-    <p>
-        <p><strong>Repeat password</strong></p>
-        <input type="password_2" name="password_2" value = "<?php echo @$data['password_2']; ?>">
-    </p>
+        <button type="submit" name="do_signup">Зарегистрироваться</button>
 
-    <p>
-        <button type="submit" name="do_signup">Submit</button>
-    </p>
-</form>
+        <p>У вас уже есть аккаунт? - <a href="/signin.php">Авторизируйтесь</a></p>
+    </form>
+
+</body>
+</html>

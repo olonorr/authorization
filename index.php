@@ -2,7 +2,7 @@
  require 'includes/db.php';
 
 ?>
-<link href="style.css" rel="stylesheet" type="text/css"/>
+<link href="assets/styles/main.css" rel="stylesheet" type="text/css"/>
 
 <header>
 <?php if (isset($_SESSION['logged_user']) ) : ?>
